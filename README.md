@@ -1,7 +1,13 @@
 ## Author
 - Gregory Rankel: [LinkedIn](https://www.linkedin.com/in/gregory-rankel/)  - [Github](https://github.com/gsrankel)
-![](https://w7n4r7h4.stackpathcdn.com/wp-content/uploads/2018/07/Starbucks-Logo-1.png)
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/MTA_New_York_City_Subway_logo.svg/514px-MTA_New_York_City_Subway_logo.svg.png)
+
+<p align="center">
+<img src = "https://upload.wikimedia.org/wikipedia/pt/0/0f/Starbucks_Corporation_Logo_2011.svg.png")
+</p>
+<p align="center">
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/MTA_New_York_City_Subway_logo.svg/514px-MTA_New_York_City_Subway_logo.svg.png")
+</p>
+
 
 ## Problem Statement
 Starbucks is a premier international coffee franchise with over 30,000 locations throughout the world. With New York City being one of the top cities to consume coffee, in all of the United States, Starbucks has imprinted its mark throughout the city, opening up more than 400 stores throughout the 5 boroughs, with 240 being specifically in Manhattan.
