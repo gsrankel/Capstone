@@ -1,4 +1,4 @@
-## Authors
+## Author
 - Gregory Rankel: [LinkedIn](https://www.linkedin.com/in/gregory-rankel/)  - [Github](https://github.com/gsrankel)
 
 ![](images/Starbucks_Corporation_Logo_2011.svg.png)
