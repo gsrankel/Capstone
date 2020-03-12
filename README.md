@@ -1,8 +1,8 @@
 ## Authors
 - Gregory Rankel: [LinkedIn](https://www.linkedin.com/in/gregory-rankel/)  - [Github](https://github.com/gsrankel)
 
-![](800px-MTA_New_York_City_Subway_logo.svg.png)
-![](Starbucks_Corporation_Logo_2011.svg.png)
+![](images/Starbucks_Corporation_Logo_2011.svg.png)
+![](images/800px-MTA_New_York_City_Subway_logo.svg.png)
 
 ## Problem Statement
 Starbucks is a premier international coffee franchise with over 30,000 locations throughout the world. With New York City being one of the top cities to consume coffee, in all of the United States, Starbucks has imprinted its mark throughout the city, opening up more than 400 stores throughout the 5 boroughs, with 240 being specifically in Manhattan.
@@ -23,14 +23,14 @@ When looking through the original Starbucks data, they had information on Starbu
 
 After filtering out the Subway Stations data with only those with stations along the E line, we were ready to calculate our first, second, and third closest Starbucks stores to each location. To do so, we calculated the Euclidian distance using the Pythagorean theorem with our Latitude being our X coordinates and Longitude being our y coordinates as shown in the image below:
 
-![Euclidian Image](euclidian.jpg)
+![Euclidian Image](images/euclidian.jpg)
 
 By subtracting both latitude and longitudes, squaring them, adding them together, and finally taking the square root, we came to our metrics of finding the closest store. With this formula as well taking the closest store in order, we were also able to take the second and third closest store as well and then add them to our data frame. The reasoning being that people may look to grab Starbucks at a store that might be closer to their office so we wanted to look at the surrounding area as well.
 
 Our next steps were to get the information we just gathered onto the turnstiles. To do this, we needed to find a way to match the station names up. This ended up requiring a manually entry and matching of each station to each other. To aid in the process, we used the get_close_match function to try and find the similar names of the stations:
-```
+```python
 get_close_matches('TIMES SQUARE-42ND ST' ,stations['station'].unique(), n=5)
-['TIMES SQUARE-42ND ST', 'TIMES SQUARE']
+#['TIMES SQUARE-42ND ST', 'TIMES SQUARE']
 ```
 The last thing that we needed to do were get the turns in per day as the turnstiles are a cumulative metric. This metric is running total of turns up until the turnstile resets, in which the counter will restart. To get this, what we had to do was to individually group each stations turnstile individually, take the .max() at the end of the day per the turnstile, less the .min() which represents the cumulative total of the beginning of the day, and get the total of that day. Due to the reset though however, we had to limit to under 30,000 turns as a mean of countering the turnstiles that may of has a reset on a particular day.
 
