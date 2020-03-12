@@ -1,15 +1,15 @@
 ## Author
 - Gregory Rankel: [LinkedIn](https://www.linkedin.com/in/gregory-rankel/)  - [Github](https://github.com/gsrankel)
 
-![](images/Starbucks_Corporation_Logo_2011.svg.png)
-![](images/800px-MTA_New_York_City_Subway_logo.svg.png)
+![starbucks](images/Starbucks_Corporation_Logo_2011.svg.png)
+![mta](images/800px-MTA_New_York_City_Subway_logo.svg.png)
 
 ## Problem Statement
 Starbucks is a premier international coffee franchise with over 30,000 locations throughout the world. With New York City being one of the top cities to consume coffee, in all of the United States, Starbucks has imprinted its mark throughout the city, opening up more than 400 stores throughout the 5 boroughs, with 240 being specifically in Manhattan.
 
 The Metropolitan Transportation Authority (MTA) has become a very viable and popular means of transportation for people in New York City, seamlessly aiding people in getting to various part of the city that may be too far to walk or too expensive to take a taxi/uber to get too. With this means of transportation, thousands of people go through these arrays of turnstiles which leads to greater foot traffic in these general areas at certain times which would make it prime real estate to open up a Starbucks store. With looking at this turnstile data that the MTA provided, can we identify trends happening around certain subway stations that can possibly lead to expansion opportunities as well as mitigate risk with certain stores that aren’t becoming as popular.
 
-With our search, we will want to be focusing in on the E line to evaluate the best opportunity. The E line was chosen as not only does it cover major parts of manhattan, it also extends throughout queens with the final stop being in Jamacia which is where many people come and transfer to take the air-train to JFK Airport.
+With our search, we will want to be focusing in on the E line to evaluate the best opportunity. The E line was chosen as not only does it cover major parts of manhattan, it also extends throughout queens with the final stop being in Jamaica which is where many people come and transfer to take the air-train to JFK Airport.
 
 We will assess our data with a time series analysis, using historical data of these stations and turnstiles to predict future foot traffic in each of the various locations. We will use both Auto Regression Integrated Moving Average (ARIMA) and the Seasonal Auto Regression Integrated Moving Average (SARIMA) model to evaluate and use regression, specifically Root Mean Squared Error (RMSE), to score our models.
 
