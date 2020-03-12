@@ -1,8 +1,8 @@
 ## Author
 - Gregory Rankel: [LinkedIn](https://www.linkedin.com/in/gregory-rankel/)  - [Github](https://github.com/gsrankel)
 
-![starbucks](images/Starbucks_Corporation_Logo_2011.svg.png)
-![mta](images/800px-MTA_New_York_City_Subway_logo.svg.png)
+<img src = "images/Starbucks_Corporation_Logo_2011.svg.png">
+<img src = "images/800px-MTA_New_York_City_Subway_logo.svg.png">
 
 ## Problem Statement
 Starbucks is a premier international coffee franchise with over 30,000 locations throughout the world. With New York City being one of the top cities to consume coffee, in all of the United States, Starbucks has imprinted its mark throughout the city, opening up more than 400 stores throughout the 5 boroughs, with 240 being specifically in Manhattan.
@@ -23,7 +23,7 @@ When looking through the original Starbucks data, they had information on Starbu
 
 After filtering out the Subway Stations data with only those with stations along the E line, we were ready to calculate our first, second, and third closest Starbucks stores to each location. To do so, we calculated the Euclidian distance using the Pythagorean theorem with our Latitude being our X coordinates and Longitude being our y coordinates as shown in the image below:
 
-![Euclidian Image](images/euclidian.jpg)
+<img src = "images/euclidian.jpg">
 
 By subtracting both latitude and longitudes, squaring them, adding them together, and finally taking the square root, we came to our metrics of finding the closest store. With this formula as well taking the closest store in order, we were also able to take the second and third closest store as well and then add them to our data frame. The reasoning being that people may look to grab Starbucks at a store that might be closer to their office so we wanted to look at the surrounding area as well.
 
