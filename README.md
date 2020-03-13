@@ -16,8 +16,10 @@ The Metropolitan Transportation Authority (MTA) has become a very viable and pop
 
 With our search, we will want to be focusing in on the E line to evaluate the best opportunity. The E line was chosen as not only does it cover major parts of manhattan, it also extends throughout queens with the final stop being in Jamaica which is where many people come and transfer to take the air-train to JFK Airport.
 
-We will assess our data with a time series analysis, using historical data of these stations and turnstiles to predict future foot traffic in each of the various locations. We will use both Auto Regression Integrated Moving Average (ARIMA) and the Seasonal Auto Regression Integrated Moving Average (SARIMA) model to evaluate and use regression, specifically Root Mean Squared Error (RMSE), to score our models.
+We will measure success on if we can build a model that beats the Yearly average of total turnstiles at a particular station and if it can predict and upward trend for future predictions.
 
+
+We will assess our data with a time series analysis, using historical data of these stations and turnstiles to predict future foot traffic in each of the various locations. We will use both Auto Regression Integrated Moving Average (ARIMA) and the Seasonal Auto Regression Integrated Moving Average (SARIMA) model to evaluate and use regression, specifically Root Mean Squared Error (RMSE), to score our models.
 
 
 ## Executive Summary
@@ -27,9 +29,9 @@ When I started off on this project, I knew I had to find two different data sets
 When looking through the original Starbucks data, they had information on Starbucks located all throughout the United States. I first needed to filter through all stores that were just located in New York and knowing that I was going to be focusing in on E line, manually filter through  all the cities that the E runs through to obtain the closest Starbucks. From here, we ran the address through  the googlemaps API and were able to obtain more specific Latitude and Longitude locations that we are able to now use to calculate our distances to the Subway stations.
 
 After filtering out the Subway Stations data with only those with stations along the E line, we were ready to calculate our first, second, and third closest Starbucks stores to each location. To do so, we calculated the Euclidian distance using the Pythagorean theorem with our Latitude being our X coordinates and Longitude being our y coordinates as shown in the image below:
-
+<p align="center">
 <img src = "images/euclidian.jpg">
-
+</p>
 By subtracting both latitude and longitudes, squaring them, adding them together, and finally taking the square root, we came to our metrics of finding the closest store. With this formula as well taking the closest store in order, we were also able to take the second and third closest store as well and then add them to our data frame. The reasoning being that people may look to grab Starbucks at a store that might be closer to their office so we wanted to look at the surrounding area as well.
 
 Our next steps were to get the information we just gathered onto the turnstiles. To do this, we needed to find a way to match the station names up. This ended up requiring a manually entry and matching of each station to each other. To aid in the process, we used the get_close_match function to try and find the similar names of the stations:
@@ -53,7 +55,6 @@ Based on the distance metric we used to calculate how far stores are from certai
  - [MTA Station Entrances Dataset](http://web.mta.info/developers/data/nyct/subway/StationEntrances.csv)
 
 ##  Data Dictionary
-
 
 |Feature|Type|Description|
 |---|---|---|
@@ -79,9 +80,8 @@ Based on the distance metric we used to calculate how far stores are from certai
 |**avg_distance**|*float*|The first, second, and third closest numbers multiplied together|
 
 
-
 ## Conclusion and Next Steps:
-In our conclusion, we can say that although our model is predicting like we wanted too on both stations in which we didn't expect to see much of a change in our predictions vs our actual for Port Authority and we we had a positive trend in our model for Jackson Heights, this model still needs more data to ensure its accuracy over a longer period of time. We were able to see by our residuals and predictions that for the most part, our model was tending to predict on the more conservative side in which we some of the actual data tended to be a little more volatile but we were able to see clear and obvious trends that showed that there are positive trends in our dataset.
+In our conclusion, we are able to say that we were able to build a successful model to determine whether or not we can beat the average turnstiles per year at a certain station. We can also say that although our model is predicting like we wanted too on both stations in which we didn't expect to see much of a change in our predictions vs our actual for Port Authority and we we had a positive trend in our model for Jackson Heights, this model still needs more data to ensure its accuracy over a longer period of time. We were able to see by our residuals and predictions that for the most part, our model was tending to predict on the more conservative side in which we some of the actual data tended to be a little more volatile but we were able to see clear and obvious trends that showed that there are positive trends in our dataset
 
 Even with limited data, I would still recommend Starbucks to look into that area as a means of possible expansion. Unlike what we saw for Port Authority, our SARIMA model for Jackson heights did show an positive trend with its predictions to give us hope that with this information along with seeing that there were not a lot of Starbucks that were close by, hope that it could be a target area. Other findings that we saw would be that the best time, if they were to proceed, would be to look at openings more in the fall as 3 of the top 4 months seem to come at the end of the year as well as Wednesday being the day to open as it showed to be the day that did have the most foot traffic happening during the week.
 
