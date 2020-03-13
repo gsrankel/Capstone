@@ -33,17 +33,21 @@ After filtering out the Subway Stations data with only those with stations along
 <img src = "images/euclidian.jpg">
 </p>
 By subtracting both latitude and longitudes, squaring them, adding them together, and finally taking the square root, we came to our metrics of finding the closest store. With this formula as well taking the closest store in order, we were also able to take the second and third closest store as well and then add them to our data frame. The reasoning being that people may look to grab Starbucks at a store that might be closer to their office so we wanted to look at the surrounding area as well. The functions created below helped expedite the process in finding these distances as well as stores:
+
 ```python
 closest_station(40.757308, -73.989735, starbucks['latitude'], starbucks['longitude'])
 #0.00061
 closest_store(40.757308, -73.989735, starbucks['latitude'], starbucks['longitude'])
 #'42nd & 8th'   
 ```
+
 Our next steps were to get the information we just gathered onto the turnstiles. To do this, we needed to find a way to match the station names up. This ended up requiring a manually entry and matching of each station to each other. To aid in the process, we used the get_close_match function to try and find the similar names of the stations:
+
 ```python
 get_close_matches('TIMES SQUARE-42ND ST' ,stations['station'].unique(), n=5)
 #['TIMES SQUARE-42ND ST', 'TIMES SQUARE']
 ```
+
 The last thing that we needed to do were get the turns in per day as the turnstiles are a cumulative metric. This metric is running total of turns up until the turnstile resets, in which the counter will restart. To get this, what we had to do was to individually group each stations turnstile individually, take the .max() at the end of the day per the turnstile, less the .min() which represents the cumulative total of the beginning of the day, and get the total of that day. Due to the reset though however, we had to limit to under 30,000 turns as a mean of countering the turnstiles that may of has a reset on a particular day.
 
 The last thing that we needed to do were get the turns in per day as the turnstiles are a cumulative metric. This metric is running total of turns up until the turnstile resets, in which the counter will restart. To get this, what we had to do was to individually group each stations turnstile individually, take the .max() at the end of the day per the turnstile, less the .min() which represents the cumulative total of the beginning of the day, and get the total of that day. Due to the reset though however, we had to limit to under 30,000 turns as a mean of countering the turnstiles that may of has a reset on a particular day.
